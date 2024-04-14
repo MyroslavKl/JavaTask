@@ -1,5 +1,6 @@
 package book.project.First.repository.implementation;
 
+import book.project.First.annotation.TrackExecution;
 import book.project.First.dto.book.BookPatch;
 import book.project.First.entity.book.BookEntity;
 import book.project.First.exceptions.DataConflictException;
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@TrackExecution
 @Repository
 @AllArgsConstructor
 public class BookRepositoryImplementation implements BookRepository {

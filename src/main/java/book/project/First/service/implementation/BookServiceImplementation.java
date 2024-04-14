@@ -1,5 +1,6 @@
 package book.project.First.service.implementation;
 
+import book.project.First.annotation.TrackExecution;
 import book.project.First.dto.book.BaseBook;
 import book.project.First.dto.book.BookDto;
 import book.project.First.dto.book.BookPatch;
@@ -14,6 +15,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+@TrackExecution
 @Service
 @AllArgsConstructor
 public class BookServiceImplementation implements BookService {
