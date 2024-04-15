@@ -21,6 +21,7 @@
 		<lombok.version>1.18.30</lombok.version>
 		<spring.security.crypto.version>6.2.2</spring.security.crypto.version>
 		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+		<jjwt.version>0.12.5</jjwt.version>
 		<springdoc.openapi.starter.webmvc.ui.version>2.3.0</springdoc.openapi.starter.webmvc.ui.version>
 	</properties>
 
@@ -56,6 +57,24 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>${postgresql.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>${jjwt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>${jjwt.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>${jjwt.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>

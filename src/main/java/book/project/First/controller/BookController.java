@@ -1,5 +1,6 @@
 package book.project.First.controller;
 
+import book.project.First.annotation.Auth;
 import book.project.First.annotation.TrackExecution;
 import book.project.First.dto.book.BaseBook;
 import book.project.First.dto.book.BookDto;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Auth
 @TrackExecution
 @RestController
 @AllArgsConstructor
@@ -41,24 +43,28 @@ public class BookController {
         return _facultyService.Find(id);
     }
 
+    @Auth(isAdmin = true)
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public BookDto create(@RequestBody BaseBook faculty) {
         return _facultyService.Create(faculty);
     }
 
+    @Auth(isAdmin = true)
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable Long id, @RequestBody BaseBook facultyDto) {
         _facultyService.Update(id, facultyDto);
     }
 
+    @Auth(isAdmin = true)
     @PatchMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable Long id, @RequestBody BookPatch facultyPatch) {
         _facultyService.Patch(id, facultyPatch);
     }
 
+    @Auth(isAdmin = true)
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
